@@ -8,6 +8,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import TextField from '@material-ui/core/TextField';
 import FormGroup from '@material-ui/core/FormGroup';
+import AddIcon from '@material-ui/icons/AddToQueue';
+import '../../styles/body.css';
 
 const Transition = (props) => (
   <Slide direction="up" {...props}/>
@@ -18,12 +20,12 @@ const AddTaskButton = ({
                          onOpenDialogAdd,
                          onCloseDialogAdd,
                          onSubmitFormAdd,
-                         onChangeFormAdd,
-                         formStatus
+                         onChangeFormAdd
                        }) => {
   return (
     <div>
-      <Button size="small" color="primary" onClick={onOpenDialogAdd}>
+      <Button size="small" color="primary" onClick={onOpenDialogAdd} variant={'contained'} id="addBt">
+        <AddIcon/>
         Add Task
       </Button>
       <Dialog
@@ -50,7 +52,7 @@ const AddTaskButton = ({
               rowsMax="4"
               onChange={onChangeFormAdd}
               margin="normal"
-              helperText="Today, i will go to gym at 9.00 pm"
+              helperText="ex.Today, i will go to gym at 9.00 pm"
               variant="outlined"
             />
           </FormGroup>

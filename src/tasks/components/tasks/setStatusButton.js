@@ -7,6 +7,8 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import Slide from '@material-ui/core/Slide';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import '../../styles/body.css';
+import CheckIcon from '@material-ui/icons/Check';
 
 const Transition = (props) => (
   <Slide direction="up" {...props}/>
@@ -21,17 +23,18 @@ const SetStatusButton = ({
                          }) => {
   return (
     <div>
-      <Button size="small" color="primary" onClick={onOpenDialogConfirmStatus}>
+      <Button size="small" color="primary" onClick={onOpenDialogConfirmStatus} variant={'contained'} id="setStatusBt">
+        <CheckIcon/>
         Set Status
       </Button>
       <Dialog
         open={isOpenDialogConfirmStatus}
         TransitionComponent={Transition}
         onClose={onCloseDialogConfirmStatus}>
-        <DialogTitle>Task : Delete Task Id: {idTask}</DialogTitle>
+        <DialogTitle>Task : Set Status Task Id: {idTask}</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Do You Want To Set  a Status Task is Complete(done) Id: {idTask} ?
+            Do You Want To Set a Status Task is Complete(done) Id: {idTask} ?
           </DialogContentText>
         </DialogContent>
         <DialogActions>

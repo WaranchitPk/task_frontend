@@ -7,6 +7,8 @@ import FormGroup from '@material-ui/core/FormGroup/FormGroup';
 import TextField from '@material-ui/core/TextField/TextField';
 import Slide from '@material-ui/core/Slide';
 import DialogActions from '@material-ui/core/DialogActions';
+import EditIcon from '@material-ui/icons/Edit';
+import '../../styles/body.css';
 
 const Transition = (props) => (
   <Slide direction="up" {...props}/>
@@ -23,7 +25,8 @@ const EditTaskButton = ({
                         }) => {
   return (
     <div>
-      <Button size="small" color="primary" onClick={onOpenDialogEdit}>
+      <Button size="small"  onClick={onOpenDialogEdit} variant={'contained'} id="editBt">
+        <EditIcon />
         Edit Task
       </Button>
       <Dialog

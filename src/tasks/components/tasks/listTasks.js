@@ -4,8 +4,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import CardActions from '@material-ui/core/CardActions';
-import Divider from '@material-ui/core/Divider';
-import Button from '@material-ui/core/Button';
+
 
 import EditTaskContainer from '../../containers/tasks/editTaskButton';
 import DeleteTaskContainer from '../../containers/tasks/deleteTaskButton';
@@ -29,9 +28,9 @@ const ListTasks = ({ tasksData }) => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <DeleteTaskContainer idTask={result.id}/>
-                  <EditTaskContainer idTask={result.id}/>
                   <MoreTaskContainer idTask={result.id}/>
+                  <EditTaskContainer idTask={result.id}/>
+                  <DeleteTaskContainer idTask={result.id}/>
                   <SetStatusTaskContainer idTask={result.id}/>
                   <Typography variant="h5" component="h2" align={'right'} color={'textSecondary'}>Status
                     : {result.status}</Typography>
@@ -41,14 +40,14 @@ const ListTasks = ({ tasksData }) => {
           </Grid>
         ))
       }
-      <Typography color={'textSecondary'} variant={'h5'}>Task : Complete (done)</Typography>
-      <Divider/>
-      <Card>
-        <CardContent>
-          asfasf
-          asdf
-        </CardContent>
-      </Card>
+      {/*<Typography color={'textSecondary'} variant={'h5'}>Task : Complete (done)</Typography>*/}
+      {/*<Divider/>*/}
+      {/*<Card>*/}
+        {/*<CardContent>*/}
+          {/*asfasf*/}
+          {/*asdf*/}
+        {/*</CardContent>*/}
+      {/*</Card>*/}
     </div>
   );
 };
