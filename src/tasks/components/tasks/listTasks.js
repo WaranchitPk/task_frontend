@@ -30,8 +30,8 @@ const ListTasks = ({ tasksData }) => {
                 <CardActions>
                   <MoreTaskContainer idTask={result.id}/>
                   <EditTaskContainer idTask={result.id}/>
-                  <DeleteTaskContainer idTask={result.id}/>
-                  <SetStatusTaskContainer idTask={result.id}/>
+                  <DeleteTaskContainer idTask={result.id} titleTask={result.title}/>
+                  <SetStatusTaskContainer idTask={result.id} titleTask={result.title}/>
                   <Typography variant="h5" component="h2" align={'right'} color={'textSecondary'}>Status
                     : {result.status}</Typography>
                 </CardActions>

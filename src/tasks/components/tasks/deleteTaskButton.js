@@ -10,44 +10,44 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import '../../styles/body.css';
 
 const Transition = (props) => (
-  <Slide direction="up" {...props}/>
+    <Slide direction="up" {...props}/>
 )
 
 
 const DeleteTaskButton = ({
-                            isOpenDialogDelete,
-                            onOpenDialogDelete,
-                            onCloseDialogDelete,
-                            onSubmitFormDelete,
-                            idTask
+                              isOpenDialogDelete,
+                              onOpenDialogDelete,
+                              onCloseDialogDelete,
+                              onSubmitFormDelete,
+                              titleTask
                           }) => {
-  return (
-    <div>
-      <Button size="small" color="primary" onClick={onOpenDialogDelete} variant={'contained'} id="deleteBt">
-        <DeleteIcon/>
-        Delete
-      </Button>
-      <Dialog
-        open={isOpenDialogDelete}
-        TransitionComponent={Transition}
-        onClose={onCloseDialogDelete}>
-        <DialogTitle>Task : Delete Task Id: {idTask}</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            Do You Want To Delete Task Id: {idTask} ?
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={onCloseDialogDelete} color="primary">
-            Disagree
-          </Button>
-          <Button onClick={onSubmitFormDelete} color="primary">
-            Agree
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </div>
-  );
+    return (
+        <div>
+            <Button size="small" color="primary" onClick={onOpenDialogDelete} variant={'contained'} id="deleteBt">
+                <DeleteIcon/>
+                Delete
+            </Button>
+            <Dialog
+                open={isOpenDialogDelete}
+                TransitionComponent={Transition}
+                onClose={onCloseDialogDelete}>
+                <DialogTitle>Task : Delete {titleTask} Task </DialogTitle>
+                <DialogContent>
+                    <DialogContentText>
+                        Do You Want To Delete {titleTask} Task ?
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={onCloseDialogDelete} color="primary">
+                        Disagree
+                    </Button>
+                    <Button onClick={onSubmitFormDelete} color="primary">
+                        Agree
+                    </Button>
+                </DialogActions>
+            </Dialog>
+        </div>
+    );
 };
 
 export default DeleteTaskButton;

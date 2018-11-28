@@ -11,43 +11,44 @@ import '../../styles/body.css';
 import CheckIcon from '@material-ui/icons/Check';
 
 const Transition = (props) => (
-  <Slide direction="up" {...props}/>
+    <Slide direction="up" {...props}/>
 )
 
 const SetStatusButton = ({
-                           isOpenDialogConfirmStatus,
-                           onOpenDialogConfirmStatus,
-                           onCloseDialogConfirmStatus,
-                           idTask,
-                           onSubmitFormConfirmStatus
+                             isOpenDialogConfirmStatus,
+                             onOpenDialogConfirmStatus,
+                             onCloseDialogConfirmStatus,
+                             onSubmitFormConfirmStatus,
+                             titleTask
                          }) => {
-  return (
-    <div>
-      <Button size="small" color="primary" onClick={onOpenDialogConfirmStatus} variant={'contained'} id="setStatusBt">
-        <CheckIcon/>
-        Set Status
-      </Button>
-      <Dialog
-        open={isOpenDialogConfirmStatus}
-        TransitionComponent={Transition}
-        onClose={onCloseDialogConfirmStatus}>
-        <DialogTitle>Task : Set Status Task Id: {idTask}</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            Do You Want To Set a Status Task is Complete(done) Id: {idTask} ?
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={onCloseDialogConfirmStatus} color="primary">
-            Disagree
-          </Button>
-          <Button onClick={onSubmitFormConfirmStatus} color="primary">
-            Agree
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </div>
-  );
+    return (
+        <div>
+            <Button size="small" color="primary" onClick={onOpenDialogConfirmStatus} variant={'contained'}
+                    id="setStatusBt">
+                <CheckIcon/>
+                Set Status
+            </Button>
+            <Dialog
+                open={isOpenDialogConfirmStatus}
+                TransitionComponent={Transition}
+                onClose={onCloseDialogConfirmStatus}>
+                <DialogTitle>Task : Set Status {titleTask} Task</DialogTitle>
+                <DialogContent>
+                    <DialogContentText>
+                        Do You Want To Set a Status {titleTask} Task is Complete(done)?
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={onCloseDialogConfirmStatus} color="primary">
+                        Disagree
+                    </Button>
+                    <Button onClick={onSubmitFormConfirmStatus} color="primary">
+                        Agree
+                    </Button>
+                </DialogActions>
+            </Dialog>
+        </div>
+    );
 };
 
 export default SetStatusButton;
